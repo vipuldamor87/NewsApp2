@@ -4,12 +4,14 @@ import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.test.newsapp.databinding.RowRecylerBinding
 import com.test.newsapp.model.NewsData
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class RecyclerAdapter(val newsData: NewsData) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
@@ -22,8 +24,10 @@ class RecyclerAdapter(val newsData: NewsData) : RecyclerView.Adapter<RecyclerAda
 
             Glide.with(NewsActivity.context1).load(newsData.articles[position].urlToImage).into(binding.ivImage)
 
+
             binding.cvHold.setOnClickListener {
                 var intent = Intent(NewsActivity.context1,NewsDetailActiviry::class.java)
+                intent.putExtra("headline", newsData.articles[position].title)
                 intent.putExtra("imageUrl", newsData.articles[position].urlToImage)
                 intent.putExtra("author", newsData.articles[position].author)
                 intent.putExtra("time", newsData.articles[position].publishedAt)

@@ -18,10 +18,19 @@ class NewsDetailActiviry : AppCompatActivity() {
 //        intent.putExtra("time", newsData.articles[position].publishedAt)
 //        intent.putExtra("url", newsData.articles[position].url)
 //        intent.putExtra("desc", newsData.articles[position].description)
+        var headline = intent.extras!!.get("headline")
         var imageUrl = intent.extras!!.get("imageUrl")
+        var author = intent.extras!!.get("author")
+        var time = intent.extras!!.get("time")
+        var url = intent.extras!!.get("url")
+        var desc = intent.extras!!.get("desc")
 
         Glide.with(this).load(imageUrl).into(binding.ivImage)
-
+        binding.tvHeadline.text = headline.toString()
+        binding.tvAuthorName.text = author.toString()
+        binding.tvTime.text = time.toString()
+        binding.tvLink.text = url.toString()
+        binding.tvDetails.text = desc.toString()
 
 
     }
