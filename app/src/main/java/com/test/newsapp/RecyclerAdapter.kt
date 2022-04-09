@@ -35,6 +35,12 @@ class RecyclerAdapter(val newsData: NewsData) : RecyclerView.Adapter<RecyclerAda
                 intent.putExtra("desc", newsData.articles[position].description)
                 NewsActivity.context1.startActivity(intent)
             }
+            binding.tvUrl.setOnClickListener {
+                var intent = Intent(NewsActivity.context1,WebActivity::class.java)
+                intent.putExtra("url",newsData.articles[position].url)
+                NewsActivity.context1.startActivity(intent)
+            }
+
         }
 
 

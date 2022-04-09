@@ -1,5 +1,6 @@
 package com.test.newsapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
@@ -31,6 +32,18 @@ class NewsDetailActiviry : AppCompatActivity() {
         binding.tvTime.text = time.toString()
         binding.tvLink.text = url.toString()
         binding.tvDetails.text = desc.toString()
+
+        binding.ivImage.setOnClickListener {
+            var intent = Intent(this,ZoomActivity::class.java)
+            intent.putExtra("imageUrl",imageUrl.toString())
+            startActivity(intent)
+        }
+
+        binding.tvLink.setOnClickListener {
+            var intent = Intent(this,ZoomActivity::class.java)
+            intent.putExtra("url",url.toString())
+            startActivity(intent)
+        }
 
 
     }
