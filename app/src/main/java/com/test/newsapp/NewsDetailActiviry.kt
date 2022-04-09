@@ -40,7 +40,7 @@ class NewsDetailActiviry : AppCompatActivity() {
         }
 
         binding.tvLink.setOnClickListener {
-            var intent = Intent(this,ZoomActivity::class.java)
+            var intent = Intent(this,WebActivity::class.java)
             intent.putExtra("url",url.toString())
             startActivity(intent)
         }
