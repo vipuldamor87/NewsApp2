@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Users/Hp/AndroidStudioProjects/NewsApp2/app/src/main/res/layout/activity_main.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/NewsApp2/app/src/main/res/layout/activity_news.xml" value="0.1" />
-        <entry key="..\:/Users/Hp/AndroidStudioProjects/NewsApp2/app/src/main/res/layout/row_recyler.xml" value="0.17346014492753623" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/NewsApp2/app/src/main/res/layout/activity_news_detail_activiry.xml" value="0.152" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/NewsApp2/app/src/main/res/layout/row_recyler.xml" value="0.1" />
       </map>
     </option>
   </component>

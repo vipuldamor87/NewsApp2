@@ -1,11 +1,13 @@
 package com.test.newsapp
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.test.newsapp.databinding.RowRecylerBinding
 import com.test.newsapp.model.NewsData
 
@@ -17,6 +19,18 @@ class RecyclerAdapter(val newsData: NewsData) : RecyclerView.Adapter<RecyclerAda
 
         fun bind(position: Int) {
             binding.newsData = newsData.articles[position]
+
+            Glide.with(NewsActivity.context1).load(newsData.articles[position].urlToImage).into(binding.ivImage)
+
+            binding.cvHold.setOnClickListener {
+                var intent = Intent(NewsActivity.context1,NewsDetailActiviry::class.java)
+                intent.putExtra("imageUrl", newsData.articles[position].urlToImage)
+                intent.putExtra("author", newsData.articles[position].author)
+                intent.putExtra("time", newsData.articles[position].publishedAt)
+                intent.putExtra("url", newsData.articles[position].url)
+                intent.putExtra("desc", newsData.articles[position].description)
+                NewsActivity.context1.startActivity(intent)
+            }
         }
 
 

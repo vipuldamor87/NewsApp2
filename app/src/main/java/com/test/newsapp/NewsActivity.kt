@@ -1,5 +1,6 @@
 package com.test.newsapp
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +24,8 @@ class NewsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        context1 = this
+
 
 
         viewModel = ViewModelProvider(this, MyViewModelFactory(Repository(apiService))).get(
@@ -36,5 +39,9 @@ class NewsActivity : AppCompatActivity() {
         viewModel.getNews()
 
 //        setContentView(R.layout.activity_news)
+    }
+
+    companion object{
+        lateinit var context1: Context
     }
 }
